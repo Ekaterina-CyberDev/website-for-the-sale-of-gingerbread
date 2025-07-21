@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медовые Пряники от Души</title>
+    <link rel="stylesheet" href="сайт.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Медовые Пряники от Души</div>
+            <nav>
+                <ul>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Продукты</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <a href="войти.html">Войти</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Медовые пряники ручной работы</h1>
+            <p>Вкусные, ароматные пряники ручной работы: классические с глазурью и на заказ для особых событий. Подарочные наборы с доставкой.</p>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+    </section>
+
+    <!-- Секция "О наших пряниках" -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="рисунок1.jpg" />
+            </div>
+            <div class="about-content">
+                <h2>О наших пряниках</h2>
+                <p>Мы предлагаем ароматные медовые пряники ручной работы — классические с глазурью и на заказ для праздников. Подберите идеальный подарок в подарочном наборе и закажите пряники для свадьбы, дня рождения или другого мероприятия. Доставим прямо к вам!</p>
+                <a href="#" class="btn">Подробнее</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Почему выбирают наши пряники" -->
+    <section class="features">
+        <div class="features-container">
+            <h2>Почему выбирают наши медовые пряники?</h2>
+            <p class="lead">Натуральные ингредиенты, уникальный рецепт и возможность индивидуального дизайна — всё это делает наши пряники особенными.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Натуральные ингредиенты</h3>
+                    <p>Мы используем только натуральные ингредиенты без консервантов.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Уникальный рецепт</h3>
+                    <p>Наш рецепт проверен временем и гарантирует высокое качество каждого пряника.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Свежесть после заказа</h3>
+                    <p>Каждый заказ выпекается с учётом индивидуальных предпочтений, чтобы гарантировать свежесть пряников.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Ассортимент" -->
+    <section class="assortment">
+        <div class="assortment-container">
+            <h2>Наш ассортимент</h2>
+            
+            <div class="assortment-grid">
+                <!-- Карточка товара 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="классические.jpg" alt="Классические медовые пряники">
+                    </div>
+                    <div class="product-info">
+                        <h3>Классические</h3>
+                        <p>Традиционные медовые пряники с глазурью</p>
+                        <div class="product-price">350 ₽/100г</div>
+                        <a href="#" class="product-btn">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка товара 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="праздничные.jpg" alt="Праздничные пряники">
+                    </div>
+                    <div class="product-info">
+                        <h3>Праздничные</h3>
+                        <p>Пряники с индивидуальным дизайном к вашим событиям</p>
+                        <div class="product-price">500 ₽/100г</div>
+                        <a href="#" class="product-btn">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка товара 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="подарочные.jpg" alt="Подарочные наборы">
+                    </div>
+                    <div class="product-info">
+                        <h3>Подарочные наборы</h3>
+                        <p>Элегантные наборы в красивой упаковке</p>
+                        <div class="product-price">от 1200 ₽</div>
+                        <a href="#" class="product-btn">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция заказа -->
+    <section class="order">
+        <div class="order-container">
+            <h2>Закажите медовые пряники ручной работы!</h2>
+            <div class="order-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="product-type">Тип пряника</label>
+                        <select id="product-type" name="product-type" required>
+                            <option value="">Выберите тип</option>
+                            <option value="classic">Классические (350 ₽/100г)</option>
+                            <option value="holiday">Праздничные (500 ₽/100г)</option>
+                            <option value="gift">Подарочные наборы (от 1200 ₽)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Количество</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Связь через соцсети (выберите один или несколько):</label>
+                        <div class="custom-multiselect">
+                            <div class="select-selected" onclick="toggleSelect(this)">
+                                Выберите способы связи
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div class="select-items">
+                                <div class="select-option" onclick="toggleOption(this, 'telegram')">
+                                    <input type="checkbox" id="telegram" style="display: none;">
+                                    <span class="checkmark"></span>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" class="social-icon">
+                                    Telegram
+                                </div>
+                                <div class="select-option" onclick="toggleOption(this, 'whatsapp')">
+                                    <input type="checkbox" id="whatsapp" style="display: none;">
+                                    <span class="checkmark"></span>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-icon">
+                                    WhatsApp
+                                </div>
+                                <div class="select-option" onclick="toggleOption(this, 'vk')">
+                                    <input type="checkbox" id="vk" style="display: none;">
+                                    <span class="checkmark"></span>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK" class="social-icon">
+                                    ВКонтакте
+                                </div>
+                                <div class="select-option" onclick="toggleOption(this, 'instagram')">
+                                    <input type="checkbox" id="instagram" style="display: none;">
+                                    <span class="checkmark"></span>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon">
+                                    Instagram
+                                </div>
+                            </div>
+                            <input type="hidden" name="contact_via" id="contact-via" value="">
+                        </div>
+                        <div class="selected-options"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Адрес доставки</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Комментарий (пожелания по персонализации)</label>
+                        <textarea id="comment" name="comment"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Оформить заказ</button>
+                    <a href="войти.html" type="submit" class="submit-btn">Оформить заказ</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция FAQ -->
+    <section class="faq">
+        <div class="faq-container">
+            <h2>Часто задаваемые вопросы о пряниках</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Можно ли заказать пряники на мероприятие?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, мы предлагаем пряники на заказ для свадеб, дней рождения и других мероприятий.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Какие виды пряников вы предлагаете?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Мы предлагаем классические пряники с глазурью.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Можно ли заказать подарочный набор пряников?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, мы предлагаем подарочные наборы пряников с доставкой.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Как убедиться, что пряники свежие?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Все наши пряники изготавливаются после получения заказа, что гарантирует их свежесть.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция контактов -->
+    <section class="contacts">
+        <div class="contacts-container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">Адрес: Республика Крым, город Алушта, ул.Школьная, д.19</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">Телефон: +7 (978) 071-61-90</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-text">Мы в соцсетях:
+                        <div class="social-icons">
+                            <a href="https://web.telegram.org/k/#@derzkiy_prynik" target="_blank" class="social-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
+                            </a>
+                            <a href="https://wa.me/your_whatsapp" target="_blank" class="social-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                            </a>
+                            <a href="https://vk.com/derzkiy.prynik" target="_blank" class="social-icon">
+                               <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>© 2025 Медовые пряники</p>
+    </footer>
+
+    <script src="сайт.js"></script>
+</body>
+</html>
