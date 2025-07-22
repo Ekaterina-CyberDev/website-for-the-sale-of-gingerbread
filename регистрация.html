@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="регистрация.css">
+    <script src="регистрация.js" defer></script>
 </head>
 <body>
     <div class="background">
@@ -29,22 +30,26 @@
         <div class="input-group">
             <label for="fullname">Ваше имя</label>
             <input type="text" id="fullname" placeholder="Введите ваше имя">
+            <div class="error-message"></div>
         </div>
         
         <div class="input-group">
             <label for="contact">Email или телефон</label>
             <input type="text" id="contact" placeholder="Введите email или номер телефона">
             <div class="contact-hint">Пример: qwerty@mail.ru или +7 (XXX) XXX-XX-XX</div>
+            <div class="error-message"></div>
         </div>
         
         <div class="input-group">
             <label for="password">Пароль</label>
             <input type="password" id="password" placeholder="Создайте пароль">
+            <div class="error-message"></div>
         </div>
         
         <div class="input-group">
             <label for="confirm-password">Повторите пароль</label>
             <input type="password" id="confirm-password" placeholder="Повторите пароль">
+            <div class="error-message"></div>
         </div>
         
         <div class="terms-group">
@@ -58,72 +63,6 @@
             Уже есть аккаунт? <a href="войти.html">Войти</a>
         </div>
     </div>
-
-    <script>
-        function showError(input, message) {
-            const inputGroup = input.parentElement;
-            inputGroup.classList.add('error');
-            const errorMsg = inputGroup.querySelector('.error-message');
-            errorMsg.textContent = message;
-        }
-        
-        function clearError(input) {
-            const inputGroup = input.parentElement;
-            inputGroup.classList.remove('error');
-        }
-        
-        document.querySelector('.register-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            let isValid = true;
-            
-            // Получаем элементы
-            const fullname = document.getElementById('fullname');
-            const contact = document.getElementById('contact');
-            const password = document.getElementById('password');
-            const confirmPassword = document.getElementById('confirm-password');
-            const terms = document.getElementById('terms');
-            
-            // Очищаем предыдущие ошибки
-            [fullname, contact, password, confirmPassword].forEach(input => clearError(input));
-            
-            // Проверка имени
-            if (fullname.value.trim().length < 2) {
-                showError(fullname, 'Имя должно содержать минимум 2 символа');
-                isValid = false;
-            }
-            
-            // Проверка email/телефона
-            const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.value.trim());
-            const isPhone = /^(\+7|8)[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/.test(contact.value.trim());
-            
-            if (!isEmail && !isPhone) {
-                showError(contact, 'Введите корректный email или номер телефона');
-                isValid = false;
-            }
-            
-            // Проверка пароля
-            if (password.value.length < 8) {
-                showError(password, 'Пароль должен содержать минимум 8 символов');
-                isValid = false;
-            }
-            
-            if (password.value !== confirmPassword.value) {
-                showError(confirmPassword, 'Пароли не совпадают');
-                isValid = false;
-            }
-            
-            // Проверка согласия с условиями
-            if (!terms.checked) {
-                alert('Необходимо согласиться с условиями');
-                isValid = false;
-            }
-            
-            // Если все проверки пройдены
-            if (isValid) {
-                alert('Регистрация успешна!\nДобро пожаловать, ' + fullname.value.trim() + '!');
-                // document.querySelector('form').submit();
-            }
-        });
-        </script>
+    <script src="регистрация.js"></script>
 </body>
 </html>
