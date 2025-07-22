@@ -1,0 +1,265 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Большие цветные круги */
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: #2879f3;
+    top: -50px;
+    left: -50px;
+    animation-duration: 3s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: #f37e10;
+    bottom: -30px;
+    right: -30px;
+    animation-duration: 4s;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: #28f37e;
+    top: 50%;
+    left: 70%;
+    animation-duration: 5s;
+}
+
+.shape-4 {
+    width: 180px;
+    height: 180px;
+    background: #f3289b;
+    bottom: 20%;
+    left: 20%;
+    animation-duration: 3.5s;
+}
+
+/* Мелкие точки */
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: float-small 3s ease-in-out infinite;
+}
+
+.dot-1 {
+    width: 80px;
+    height: 80px;
+    background: #9b51e0;
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.3s;
+}
+
+.dot-2 {
+    width: 60px;
+    height: 60px;
+    background: #51b5e0;
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 0.6s;
+}
+
+.dot-3 {
+    width: 40px;
+    height: 40px;
+    background: #e0517a;
+    top: 70%;
+    left: 30%;
+    animation-delay: 0.9s;
+}
+
+.dot-4 {
+    width: 50px;
+    height: 50px;
+    background: #e0a351;
+    top: 10%;
+    left: 50%;
+    animation-delay: 1.2s;
+}
+
+.dot-5 {
+    width: 70px;
+    height: 70px;
+    background: #51e087;
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+}
+
+@keyframes float-small {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) translateX(15px) scale(1.1);
+    }
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.register-container h1 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 28px;
+}
+
+.register-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2879f3;
+    box-shadow: 0 0 0 3px rgba(40, 121, 243, 0.2);
+}
+
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: #555;
+}
+
+.terms-group input {
+    margin-right: 8px;
+}
+
+.terms-group a {
+    color: #2879f3;
+    text-decoration: none;
+}
+
+.terms-group a:hover {
+    text-decoration: underline;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2879f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.register-btn:hover {
+    background: #1a68e0;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: #2879f3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.contact-hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Стили для ошибок */
+.input-group.error input {
+    border-color: #ff4444;
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.input-group.error .error-message {
+    display: block;
+}
