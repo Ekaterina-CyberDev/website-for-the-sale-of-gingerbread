@@ -1,3 +1,4 @@
+/* Базовые стили */
 body {
     margin: 0;
     padding: 0;
@@ -17,6 +18,17 @@ body {
     z-index: -1;
 }
 
+/* Анимации фоновых элементов */
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(20px); }
+}
+
+@keyframes float-small {
+    0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+    50% { transform: translateY(-15px) translateX(15px) scale(1.1); }
+}
+
 .shape {
     position: absolute;
     border-radius: 50%;
@@ -25,44 +37,6 @@ body {
     animation: float 4s ease-in-out infinite;
 }
 
-/* Большие цветные круги */
-.shape-1 {
-    width: 300px;
-    height: 300px;
-    background: #2879f3;
-    top: -50px;
-    left: -50px;
-    animation-duration: 3s;
-}
-
-.shape-2 {
-    width: 200px;
-    height: 200px;
-    background: #f37e10;
-    bottom: -30px;
-    right: -30px;
-    animation-duration: 4s;
-}
-
-.shape-3 {
-    width: 150px;
-    height: 150px;
-    background: #28f37e;
-    top: 50%;
-    left: 70%;
-    animation-duration: 5s;
-}
-
-.shape-4 {
-    width: 180px;
-    height: 180px;
-    background: #f3289b;
-    bottom: 20%;
-    left: 20%;
-    animation-duration: 3.5s;
-}
-
-/* Мелкие точки */
 .dot {
     position: absolute;
     border-radius: 50%;
@@ -71,69 +45,19 @@ body {
     animation: float-small 3s ease-in-out infinite;
 }
 
-.dot-1 {
-    width: 80px;
-    height: 80px;
-    background: #9b51e0;
-    top: 20%;
-    right: 15%;
-    animation-delay: 0.3s;
-}
+/* Позиционирование фоновых элементов */
+.shape-1 { width: 300px; height: 300px; background: #2879f3; top: -50px; left: -50px; animation-duration: 3s; }
+.shape-2 { width: 200px; height: 200px; background: #f37e10; bottom: -30px; right: -30px; animation-duration: 4s; }
+.shape-3 { width: 150px; height: 150px; background: #28f37e; top: 50%; left: 70%; animation-duration: 5s; }
+.shape-4 { width: 180px; height: 180px; background: #f3289b; bottom: 20%; left: 20%; animation-duration: 3.5s; }
 
-.dot-2 {
-    width: 60px;
-    height: 60px;
-    background: #51b5e0;
-    bottom: 30%;
-    left: 15%;
-    animation-delay: 0.6s;
-}
+.dot-1 { width: 80px; height: 80px; background: #9b51e0; top: 20%; right: 15%; animation-delay: 0.3s; }
+.dot-2 { width: 60px; height: 60px; background: #51b5e0; bottom: 30%; left: 15%; animation-delay: 0.6s; }
+.dot-3 { width: 40px; height: 40px; background: #e0517a; top: 70%; left: 30%; animation-delay: 0.9s; }
+.dot-4 { width: 50px; height: 50px; background: #e0a351; top: 10%; left: 50%; animation-delay: 1.2s; }
+.dot-5 { width: 70px; height: 70px; background: #51e087; bottom: 10%; right: 25%; animation-delay: 1.5s; }
 
-.dot-3 {
-    width: 40px;
-    height: 40px;
-    background: #e0517a;
-    top: 70%;
-    left: 30%;
-    animation-delay: 0.9s;
-}
-
-.dot-4 {
-    width: 50px;
-    height: 50px;
-    background: #e0a351;
-    top: 10%;
-    left: 50%;
-    animation-delay: 1.2s;
-}
-
-.dot-5 {
-    width: 70px;
-    height: 70px;
-    background: #51e087;
-    bottom: 10%;
-    right: 25%;
-    animation-delay: 1.5s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) translateX(0);
-    }
-    50% {
-        transform: translateY(-20px) translateX(20px);
-    }
-}
-
-@keyframes float-small {
-    0%, 100% {
-        transform: translateY(0) translateX(0) scale(1);
-    }
-    50% {
-        transform: translateY(-15px) translateX(15px) scale(1.1);
-    }
-}
-
+/* Стили формы */
 .register-container {
     background: rgba(255, 255, 255, 0.9);
     padding: 40px;
@@ -159,9 +83,19 @@ body {
     font-size: 14px;
 }
 
+.contact-hint {
+    font-size: 14px;  /* Уменьшаем размер шрифта */
+    color: #7f7e7e;      /* Делаем цвет менее заметным */
+    margin-top: 3px;  /* Уменьшаем отступ сверху */
+    font-style: italic;
+    line-height: 1.5; /* Уменьшаем межстрочный интервал */
+}
+
+/* Стили полей ввода */
 .input-group {
     margin-bottom: 20px;
     text-align: left;
+    position: relative;
 }
 
 .input-group label {
@@ -177,24 +111,52 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
-    transition: all 0.3s;
+    transition: all 0.3s ease, box-shadow 0.5s ease;
+    background-color: #fff;
+}
+
+/* Подсветка при наведении (серое свечение) */
+.input-group input:hover {
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(170, 170, 170, 0.5);
 }
 
 .input-group input:focus {
     outline: none;
     border-color: #2879f3;
-    box-shadow: 0 0 0 3px rgba(40, 121, 243, 0.2);
+    box-shadow: 0 0 15px rgba(40, 121, 243, 0.6);
 }
 
+/* Состояния валидации с эффектом свечения */
+.input-group.valid input {
+    border-color: #4CAF50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+    animation: pulse-green 2s infinite;
+}
+
+.input-group.invalid input {
+    border-color: #ff4444;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+    animation: pulse-red 2s infinite;
+}
+
+/* Чекбокс условий */
 .terms-group {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
     font-size: 13px;
     color: #555;
+    position: relative;
+    padding-left: 25px;
 }
 
 .terms-group input {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
     margin-right: 8px;
 }
 
@@ -207,6 +169,7 @@ body {
     text-decoration: underline;
 }
 
+/* Кнопка регистрации */
 .register-btn {
     width: 100%;
     padding: 12px;
@@ -217,13 +180,27 @@ body {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .register-btn:hover {
     background: #1a68e0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.register-btn:active {
+    transform: translateY(1px);
+}
+
+.register-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Ссылка на вход */
 .login-link {
     margin-top: 20px;
     font-size: 14px;
@@ -240,26 +217,26 @@ body {
     text-decoration: underline;
 }
 
-.contact-hint {
-    font-size: 12px;
-    color: #666;
-    margin-top: 5px;
-    font-style: italic;
+/* Адаптивность */
+@media (max-width: 480px) {
+    .register-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+    
+    .input-group input {
+        padding: 10px 12px;
+    }
 }
 
-/* Стили для ошибок */
-.input-group.error input {
-    border-color: #ff4444;
-    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+.input-group input:not(:placeholder-shown) {
+    animation: none; /* Убираем анимацию при заполнении */
 }
 
-.error-message {
-    color: #ff4444;
-    font-size: 12px;
-    margin-top: 5px;
-    display: none;
+.input-group input:not(:placeholder-shown).valid {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
 }
 
-.input-group.error .error-message {
-    display: block;
+.input-group input:not(:placeholder-shown).invalid {
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.7);
 }
