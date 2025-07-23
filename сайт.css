@@ -46,6 +46,90 @@ nav a:hover {
     color: #d4a017;
 }
 
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff9f0;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    border: 1px solid #ffd8a8;
+    text-align: center; /* Центрируем текст */
+}
+
+.close {
+    color: #d4a76a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #b38b52;
+}
+
+.contact-modal-title {
+    font-size: 22px;
+    color: #b38b52;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-modal-item {
+    margin-bottom: 20px;
+    text-align: center; /* Центрируем содержимое */
+}
+
+.contact-label {
+    color: #8a6d3b;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-value {
+    color: #5a4526;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Центрируем иконки */
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
 /* Герой-секция */
 .hero {
     background-color: #fff4e0;
