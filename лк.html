@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет | Медовые Пряники</title>
+    <link rel="stylesheet" href="сайт.css">
+    <style>
+        /* Дополнительные стили для личного кабинета */
+        .account-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .account-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .account-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4a017;
+            margin-right: 30px;
+        }
+        
+        .account-info h2 {
+            color: #5a3e1f;
+            margin-bottom: 10px;
+        }
+        
+        .account-email {
+            color: #7a5c3a;
+            font-size: 18px;
+        }
+        
+        .account-tabs {
+            display: flex;
+            border-bottom: 2px solid #ffd8a8;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #5a3e1f;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: #d4a017;
+            font-weight: bold;
+        }
+        
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #d4a017;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .order-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .order-card {
+            background: #fff9f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-number {
+            font-weight: bold;
+            color: #5a3e1f;
+        }
+        
+        .order-date {
+            color: #7a5c3a;
+        }
+        
+        .order-status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .status-completed {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .status-processing {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+        
+        .order-products {
+            margin-top: 15px;
+        }
+        
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .edit-profile-form {
+            max-width: 600px;
+            margin-top: 30px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #5a3e1f;
+            font-weight: bold;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .save-btn {
+            background-color: #d4a017;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .save-btn:hover {
+            background-color: #b38614;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта (как на главной) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Медовые пряники</div>
+            <nav>
+                <ul>
+                    <li><a href="сайт.html">Главная</a></li>
+                    <li><a href="сайт.html#order">Заказать</a></li>
+                    <li><a href="сайт.html#contacts">Контакты</a></li>
+                    <li><a href="войти.html">Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="account-container">
+        <div class="account-header">
+            <img src="https://via.placeholder.com/120" alt="Аватар" class="account-avatar">
+            <div class="account-info">
+                <h2>Иван Иванов</h2>
+                <p class="account-email">ivan@example.com</p>
+            </div>
+        </div>
+        
+        <div class="account-tabs">
+            <button class="tab-btn active" data-tab="profile">Профиль</button>
+            <button class="tab-btn" data-tab="orders">Мои заказы</button>
+            <button class="tab-btn" data-tab="favorites">Избранное</button>
+        </div>
+        
+        <!-- Вкладка профиля -->
+        <div class="tab-content active" id="profile-tab">
+            <h3>Редактирование профиля</h3>
+            <form class="edit-profile-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">Имя</label>
+                        <input type="text" id="first-name" value="Иван">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Фамилия</label>
+                        <input type="text" id="last-name" value="Иванов">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="ivan@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" value="+7 (978) 123-45-67">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" value="Республика Крым, г. Алушта, ул. Школьная, д. 19">
+                </div>
+                
+                <button type="submit" class="save-btn">Сохранить изменения</button>
+            </form>
+        </div>
+        
+        <!-- Вкладка заказов -->
+        <div class="tab-content" id="orders-tab">
+            <h3>История заказов</h3>
+            <div class="order-list">
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-number">Заказ #12345</span>
+                        <span class="order-date">15 мая 2023</span>
+                        <span class="order-status status-completed">Выполнен</span>
+                    </div>
+                    <div class="order-products">
+                        <div class="product-item">
+                            <span>Подарочный набор "Свадебный"</span>
+                            <span>1200 ₽</span>
+                        </div>
+                        <div class="product-item">
+                            <span>Классические пряники (200г)</span>
+                            <span>700 ₽</span>
+                        </div>
+                    </div>
+                    <div class="order-total" style="margin-top: 15px; text-align: right; font-weight: bold;">
+                        Итого: 1900 ₽
+                    </div>
+                </div>
+                
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-number">Заказ #12344</span>
+                        <span class="order-date">10 мая 2023</span>
+                        <span class="order-status status-processing">В обработке</span>
+                    </div>
+                    <div class="order-products">
+                        <div class="product-item">
+                            <span>Пряники "День Рождения"</span>
+                            <span>1500 ₽</span>
+                        </div>
+                    </div>
+                    <div class="order-total" style="margin-top: 15px; text-align: right; font-weight: bold;">
+                        Итого: 1500 ₽
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Вкладка избранного -->
+        <div class="tab-content" id="favorites-tab">
+            <h3>Избранные товары</h3>
+            <p style="color: #7a5c3a; font-size: 18px;">Здесь будут отображаться товары, которые вы добавили в избранное</p>
+        </div>
+    </main>
+
+    <!-- Подвал (как на главной) -->
+    <footer class="footer">
+        <p>© 2025 Медовые пряники</p>
+    </footer>
+
+    <script>
+        // Переключение вкладок
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Удаляем активный класс у всех кнопок и вкладок
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    // Показываем соответствующую вкладку
+                    const tabId = this.getAttribute('data-tab') + '-tab';
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Обработка формы профиля
+            const profileForm = document.querySelector('.edit-profile-form');
+            if (profileForm) {
+                profileForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Изменения профиля сохранены!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
