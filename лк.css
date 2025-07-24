@@ -157,12 +157,6 @@ nav a:hover {
     border-radius: 10px; /* Скругленные углы */
     overflow: hidden; /* Скрытие выходящего за границы */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Тень */
-    transition: transform 0.3s; /* Анимация */
-}
-
-/* Карточка при наведении */
-.favorite-item:hover {
-    transform: translateY(-5px); /* Поднятие */
 }
 
 /* Изображение в карточке */
@@ -176,11 +170,6 @@ nav a:hover {
     width: 100%; height: 100%; /* Заполнение */
     object-fit: cover; /* Обрезка с сохранением пропорций */
     transition: transform 0.5s; /* Анимация */
-}
-
-/* Изображение при наведении */
-.favorite-item:hover .favorite-item-image img {
-    transform: scale(1.05); /* Увеличение */
 }
 
 /* Информация о товаре */
