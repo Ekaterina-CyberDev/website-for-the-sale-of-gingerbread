@@ -114,3 +114,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.querySelectorAll('.favorite-star').forEach(star => {
+    star.addEventListener('click', function() {
+        this.classList.toggle('active');
+        this.textContent = this.classList.contains('active') ? '★' : '☆';
+        
+        // Получаем данные о товаре
+        const productCard = this.closest('.product-card');
+        const productData = {
+            name: productCard.querySelector('h3').textContent,
+            description: productCard.querySelector('p').textContent,
+            price: productCard.querySelector('.product-price').textContent,
+            image: productCard.querySelector('.product-image img').src
+        };
+        
+        // Работа с избранным
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+        if (this.classList.contains('active')) {
+            // Добавляем в избранное
+            if (!favorites.some(item => item.name === productData.name)) {
+                favorites.push(productData);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+            }
+        } else {
+            // Удаляем из избранного
+            favorites = favorites.filter(item => item.name !== productData.name);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }
+    });
+});
+
+// При загрузке страницы отмечаем звездочки у избранных товаров
+document.addEventListener('DOMContentLoaded', function() {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+    document.querySelectorAll('.product-card').forEach(card => {
+        const productName = card.querySelector('h3').textContent;
+        const star = card.querySelector('.favorite-star');
+        
+        if (favorites.some(item => item.name === productName)) {
+            star.classList.add('active');
+            star.textContent = '★';
+        }
+    });
+});

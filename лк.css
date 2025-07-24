@@ -46,7 +46,7 @@ nav a:hover {
     color: #d4a017;
 }
 
-/* Стили для модального окна */
+/* Модальное окно контактов */
 .modal {
     display: none;
     position: fixed;
@@ -67,7 +67,7 @@ nav a:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     position: relative;
     border: 1px solid #ffd8a8;
-    text-align: center; /* Центрируем текст */
+    text-align: center;
 }
 
 .close {
@@ -93,7 +93,7 @@ nav a:hover {
 
 .contact-modal-item {
     margin-bottom: 20px;
-    text-align: center; /* Центрируем содержимое */
+    text-align: center;
 }
 
 .contact-label {
@@ -110,7 +110,7 @@ nav a:hover {
 
 .social-icons {
     display: flex;
-    justify-content: center; /* Центрируем иконки */
+    justify-content: center;
     gap: 20px;
     margin-top: 15px;
 }
@@ -130,167 +130,15 @@ nav a:hover {
     object-fit: contain;
 }
 
-/* Герой-секция */
-.hero {
-    background-color: #fff4e0;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-size: 42px;
-    color: #5a3e1f;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #7a5c3a;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #d4a017;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #b38614;
-}
-
-/* Секция "О наших пряниках" */
-.about {
-    padding: 80px 0;
-    background-color: white;
-}
-
-.about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 0 20px;
-}
-
-.about-image {
-    flex: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about h2 {
-    font-size: 36px;
-    color: #d4a017;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 18px;
-    color: #5a3e1f;
-    margin-bottom: 30px;
-}
-
-/* Секция "Почему выбирают наши пряники" */
-.features {
-    padding: 80px 0;
-    background-color: #fff9f0;
-    text-align: center;
-}
-
-.features-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.features h2 {
-    font-size: 36px;
-    color: #d4a017;
-    margin-bottom: 20px;
-}
-
-.features p.lead {
-    font-size: 20px;
-    color: #5a3e1f;
-    max-width: 800px;
-    margin: 0 auto 50px;
-}
-
-.features-grid {
+/* Стили для избранных товаров */
+.favorites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
-.feature-item {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: left;
-}
-
-.feature-item h3 {
-    font-size: 24px;
-    color: #d4a017;
-    margin-bottom: 15px;
-}
-
-.feature-item p {
-    color: #5a3e1f;
-}
-
-/* Секция "Ассортимент" */
-.assortment {
-    padding: 80px 0;
-    background-color: white;
-}
-
-.assortment-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.assortment h2 {
-    font-size: 36px;
-    color: #d4a017;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.assortment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.product-card {
+.favorite-item {
     background: #fff9f0;
     border-radius: 10px;
     overflow: hidden;
@@ -298,49 +146,50 @@ nav a:hover {
     transition: transform 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
+.favorite-item:hover {
+    transform: translateY(-5px);
 }
 
-.product-image {
-    height: 200px;
+.favorite-item-image {
+    height: 180px;
     overflow: hidden;
 }
 
-.product-image img {
+.favorite-item-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
 }
 
-.product-card:hover .product-image img {
-    transform: scale(1.1);
+.favorite-item:hover .favorite-item-image img {
+    transform: scale(1.05);
 }
 
-.product-info {
+.favorite-item-info {
     padding: 20px;
 }
 
-.product-info h3 {
-    font-size: 22px;
+.favorite-item-info h4 {
+    font-size: 20px;
     color: #5a3e1f;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
-.product-info p {
+.favorite-item-info p {
     color: #7a5c3a;
     margin-bottom: 15px;
+    font-size: 15px;
 }
 
-.product-price {
-    font-size: 20px;
+.favorite-item-price {
+    font-size: 18px;
     font-weight: bold;
     color: #d4a017;
     margin-bottom: 15px;
 }
 
-.product-btn {
+.remove-favorite {
     display: inline-block;
     background-color: #d4a017;
     color: white;
@@ -348,311 +197,16 @@ nav a:hover {
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.product-btn:hover {
-    background-color: #b38614;
-}
-
-/* Секция заказа */
-.order {
-    padding: 80px 0;
-    background-color: #fff4e0;
-}
-
-.order-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.order h2 {
-    font-size: 36px;
-    color: #d4a017;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.order-form {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #5a3e1f;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    height: 120px;
-    resize: vertical;
-}
-
-.submit-btn {
-    display: block;
-    width: 100%;
-    background-color: #d4a017;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #b38614;
-}
-
-/* Стили для кастомного выпадающего списка */
-.custom-multiselect {
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.select-selected {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 12px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.select-items {
-    display: none;
-    position: absolute;
-    background-color: white;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    max-height: 300px;
-    overflow-y: auto;
-    z-index: 1;
-    margin-top: 5px;
-}
-
-.select-option {
-    padding: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-left: 40px;
-}
-
-.select-option:hover {
-    background-color: #fff4e0;
-}
-
-.checkmark {
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    height: 20px;
-    width: 20px;
-    background-color: #fff;
-    border: 2px solid #d4a017;
-    border-radius: 4px;
-}
-
-.select-option input:checked ~ .checkmark {
-    background-color: #d4a017;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 5px;
-    top: 1px;
-    width: 6px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
-.select-option input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-}
-
-.arrow {
-    transition: transform 0.3s;
-}
-
-.select-selected.active .arrow {
-    transform: rotate(180deg);
-}
-
-.select-items.show {
-    display: block;
-}
-
-.selected-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.selected-tag {
-    background-color: #d4a017;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
     font-size: 14px;
-}
-
-.selected-tag img {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-}
-
-.selected-tag .remove {
-    margin-left: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+    border: none;
     cursor: pointer;
-    font-weight: bold;
+    width: 100%;
 }
 
-/* Стили для секции FAQ */
-.faq {
-    padding: 80px 0;
-    background-color: white;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.faq h2 {
-    font-size: 36px;
-    color: #d4a017;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-}
-
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 22px;
-    color: #5a3e1f;
-    margin-bottom: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px 0;
-}
-
-.faq-toggle {
-    font-size: 28px;
-    color: #d4a017;
-    transition: transform 0.3s;
-}
-
-.faq-answer {
-    color: #7a5c3a;
-    line-height: 1.6;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding-left: 20px;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding-top: 10px;
-}
-
-.faq-item.active .faq-toggle {
-    transform: rotate(45deg);
-}
-
-/* Секция контактов */
-.contacts {
-    padding: 80px 0;
-    background-color: #fff4e0;
-}
-
-.contacts-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.contacts h2 {
-    font-size: 36px;
-    color: #d4a017;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.contact-info {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.contact-icon {
-    font-size: 24px;
-    color: #d4a017;
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
-}
-
-.contact-text {
-    font-size: 18px;
-    color: #5a3e1f;
+.remove-favorite:hover {
+    background-color: #b38614;
 }
 
 /* Футер */
@@ -667,55 +221,176 @@ nav a:hover {
     margin: 0;
 }
 
-.contact-items {
+/* Стили для личного кабинета */
+.account-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.account-header {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.account-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #d4a017;
+    margin-right: 30px;
+}
+
+.account-info h2 {
+    color: #5a3e1f;
+    margin-bottom: 10px;
+}
+
+.account-email {
+    color: #7a5c3a;
+    font-size: 18px;
+}
+
+.account-tabs {
+    display: flex;
+    border-bottom: 2px solid #ffd8a8;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #5a3e1f;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-btn.active {
+    color: #d4a017;
+    font-weight: bold;
+}
+
+.tab-btn.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #d4a017;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.order-list {
+    display: grid;
     gap: 20px;
 }
 
-.contact-item {
+.order-card {
+    background: #fff9f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.order-header {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
 
-.contact-icon {
-    font-size: 24px;
-    color: #d4a017;
-    margin-right: 15px;
-    width: 30px;
-}
-
-.contact-text {
-    font-size: 18px;
+.order-number {
+    font-weight: bold;
     color: #5a3e1f;
 }
 
-.social-icons {
+.order-date {
+    color: #7a5c3a;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status-completed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-processing {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.order-products {
+    margin-top: 15px;
+}
+
+.product-item {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
+.edit-profile-form {
+    max-width: 600px;
+    margin-top: 30px;
+}
+
+.form-row {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border-radius: 50%;
-    padding: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.social-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+.form-group {
+    flex: 1;
 }
 
-.social-icon img {
-    max-width: 100%;
-    height: auto;
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5a3e1f;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.save-btn {
+    background-color: #d4a017;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #b38614;
 }

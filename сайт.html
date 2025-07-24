@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Медовые Пряники от Души</title>
+    <title>Дерзкий пряник</title>
     <link rel="stylesheet" href="сайт.css">
 </head>
 <body>
     <!-- Шапка сайта -->
     <header>
         <div class="header-container">
-            <div class="logo">Медовые пряники</div>
+            <div class="logo">Дерзкий пряник</div>
             <nav>
                 <ul>
+                    <a href="лк.html">Личный кабинет</a>
                     <li><a href="#">Продукты</a></li>
                     <li><a href="#" id="contacts-link">Контакты</a></li>
                     <a href="войти.html">Войти</a>
@@ -103,52 +104,61 @@
     </section>
 
     <!-- Секция "Ассортимент" -->
-    <section class="assortment">
-        <div class="assortment-container">
-            <h2>Наш ассортимент</h2>
-            
-            <div class="assortment-grid">
-                <!-- Карточка товара 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="классические.jpg" alt="Классические медовые пряники">
-                    </div>
-                    <div class="product-info">
+<section class="assortment">
+    <div class="assortment-container">
+        <h2>Наш ассортимент</h2>
+        
+        <div class="assortment-grid">
+            <!-- Карточка товара 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="классические.jpg" alt="Классические медовые пряники">
+                </div>
+                <div class="product-info">
+                    <div class="product-title-wrapper">
                         <h3>Классические</h3>
-                        <p>Традиционные медовые пряники с глазурью</p>
-                        <div class="product-price">350 ₽/100г</div>
-                        <a href="#order" class="product-btn">Заказать</a>
+                        <span class="favorite-star">☆</span>
                     </div>
+                    <p>Традиционные медовые пряники с глазурью</p>
+                    <div class="product-price">350 ₽/100г</div>
+                    <a href="#order" class="product-btn">Заказать</a>
                 </div>
-                
-                <!-- Карточка товара 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="праздничные.jpg" alt="Праздничные пряники">
-                    </div>
-                    <div class="product-info">
+            </div>
+            
+            <!-- Карточка товара 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="праздничные.jpg" alt="Праздничные пряники">
+                </div>
+                <div class="product-info">
+                    <div class="product-title-wrapper">
                         <h3>Праздничные</h3>
-                        <p>Пряники с индивидуальным дизайном к вашим событиям</p>
-                        <div class="product-price">500 ₽/100г</div>
-                        <a href="#order" class="product-btn">Заказать</a>
+                        <span class="favorite-star">☆</span>
                     </div>
+                    <p>Пряники с индивидуальным дизайном к вашим событиям</p>
+                    <div class="product-price">500 ₽/100г</div>
+                    <a href="#order" class="product-btn">Заказать</a>
                 </div>
-                
-                <!-- Карточка товара 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="подарочные.jpg" alt="Подарочные наборы">
-                    </div>
-                    <div class="product-info">
+            </div>
+            
+            <!-- Карточка товара 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="подарочные.jpg" alt="Подарочные наборы">
+                </div>
+                <div class="product-info">
+                    <div class="product-title-wrapper">
                         <h3>Подарочные наборы</h3>
-                        <p>Элегантные наборы в красивой упаковке</p>
-                        <div class="product-price">от 1200 ₽</div>
-                        <a href="#order" class="product-btn">Заказать</a>
+                        <span class="favorite-star">☆</span>
                     </div>
+                    <p>Элегантные наборы в красивой упаковке</p>
+                    <div class="product-price">от 1200 ₽</div>
+                    <a href="#order" class="product-btn">Заказать</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Секция заказа -->
     <section id="order" class="order">
