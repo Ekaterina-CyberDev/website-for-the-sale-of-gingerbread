@@ -1,3 +1,179 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация мультиселекта для социальных сетей
+    const profileSocialOptions = {};
+    
+    // Функции для работы с мультиселектом
+    window.toggleSelect = function(element) {
+        const parent = element.parentElement;
+        const items = parent.querySelector('.select-items');
+        items.classList.toggle('show');
+        element.classList.toggle('active');
+        
+        // Закрываем другие открытые списки
+        document.querySelectorAll('.select-items').forEach(otherItems => {
+            if (otherItems !== items && otherItems.classList.contains('show')) {
+                otherItems.classList.remove('show');
+                otherItems.previousElementSibling.classList.remove('active');
+            }
+        });
+    }
+    
+    // Обработка мультиселекта для соцсетей
+    const selectedOptions = {};
+    
+    window.toggleSelect = function(element) {
+        const parent = element.parentElement;
+        const items = parent.querySelector('.select-items');
+        items.classList.toggle('show');
+        element.classList.toggle('active');
+        
+        // Закрываем другие открытые списки
+        document.querySelectorAll('.select-items').forEach(otherItems => {
+            if (otherItems !== items && otherItems.classList.contains('show')) {
+                otherItems.classList.remove('show');
+                otherItems.previousElementSibling.classList.remove('active');
+            }
+        });
+    }
+    
+    window.toggleOption = function(element, value) {
+        const checkbox = element.querySelector('input');
+        checkbox.checked = !checkbox.checked;
+        
+        if (checkbox.checked) {
+            selectedOptions[value] = {
+                name: element.textContent.trim(),
+                icon: element.querySelector('img').src
+            };
+        } else {
+            delete selectedOptions[value];
+        }
+        
+        updateSelectedDisplay();
+        updateHiddenInput();
+    }
+    
+    function updateSelectedDisplay() {
+        const container = document.querySelector('.selected-options');
+        container.innerHTML = '';
+        
+        for (const [value, data] of Object.entries(selectedOptions)) {
+            const tag = document.createElement('div');
+            tag.className = 'selected-tag';
+            tag.innerHTML = `
+                <img src="${data.icon}" alt="${value}">
+                ${data.name}
+                <span class="remove" onclick="removeOption('${value}')">×</span>
+            `;
+            container.appendChild(tag);
+        }
+    }
+    
+    window.removeOption = function(value) {
+        delete selectedOptions[value];
+        document.getElementById(value).checked = false;
+        updateSelectedDisplay();
+        updateHiddenInput();
+    }
+    
+    function updateHiddenInput() {
+        document.getElementById('contact-via').value = Object.keys(selectedOptions).join(',');
+    }
+    
+    // Закрытие списка при клике вне его
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.custom-multiselect')) {
+            document.querySelectorAll('.select-items').forEach(items => {
+                items.classList.remove('show');
+                items.previousElementSibling.classList.remove('active');
+            });
+        }
+    });
+});
+
+    window.toggleOption = function(element, value) {
+        const checkbox = element.querySelector('input');
+        checkbox.checked = !checkbox.checked;
+        
+        if (checkbox.checked) {
+            profileSocialOptions[value] = {
+                name: element.textContent.trim(),
+                icon: element.querySelector('img').src
+            };
+        } else {
+            delete profileSocialOptions[value];
+        }
+        
+        updateProfileSelectedDisplay();
+        updateProfileHiddenInput();
+    }
+    
+    function updateProfileSelectedDisplay() {
+        const container = document.querySelector('#profile-tab .selected-options');
+        container.innerHTML = '';
+        
+        for (const [value, data] of Object.entries(profileSocialOptions)) {
+            const tag = document.createElement('div');
+            tag.className = 'selected-tag';
+            tag.innerHTML = `
+                <img src="${data.icon}" alt="${value}">
+                ${data.name}
+                <span class="remove" onclick="removeProfileOption('${value}')">×</span>
+            `;
+            container.appendChild(tag);
+        }
+    }
+    
+    window.removeProfileOption = function(value) {
+        delete profileSocialOptions[value];
+        document.getElementById(`profile-${value}`).checked = false;
+        updateProfileSelectedDisplay();
+        updateProfileHiddenInput();
+    }
+    
+    function updateProfileHiddenInput() {
+        document.getElementById('social-networks').value = Object.keys(profileSocialOptions).join(',');
+    }
+    
+    // Загрузка сохраненных соцсетей при открытии профиля
+    loadProfileSocialNetworks();
+    
+    // Закрытие списка при клике вне его
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.custom-multiselect')) {
+            document.querySelectorAll('.select-items').forEach(items => {
+                items.classList.remove('show');
+                items.previousElementSibling.classList.remove('active');
+            });
+        }
+    });
+
+function loadProfileSocialNetworks() {
+    // Здесь можно загрузить сохраненные соцсети пользователя
+    // Например, из localStorage или с сервера
+    const savedSocials = localStorage.getItem('user_social_networks');
+    if (savedSocials) {
+        const networks = savedSocials.split(',');
+        networks.forEach(network => {
+            if (network) {
+                const option = document.querySelector(`#profile-tab .select-option[onclick*="${network}"]`);
+                if (option) {
+                    toggleOption(option, network);
+                }
+            }
+        });
+    }
+}
+
+// При сохранении профиля
+function saveProfile() {
+    // Сохраняем выбранные соцсети
+    const selectedNetworks = document.getElementById('social-networks').value;
+    localStorage.setItem('user_social_networks', selectedNetworks);
+    
+    // Другие действия по сохранению профиля...
+}
+
 // Переключение вкладок
         document.addEventListener('DOMContentLoaded', function() {
             const tabBtns = document.querySelectorAll('.tab-btn');

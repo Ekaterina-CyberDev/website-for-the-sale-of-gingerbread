@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора | Дерзкий пряник</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Дерзкий пряник | Админ</div>
+            <nav>
+                <ul>
+                    <li><a href="сайт.html">На сайт</a></li>
+                    <li><a href="#">Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Основное содержимое -->
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Панель администратора</h1>
+            <div class="admin-stats">
+                <span>Новых заказов: <span id="new-orders-count">5</span></span> |
+                <span>Новых пользователей: <span id="new-users-count">3</span></span>
+            </div>
+        </div>
+        
+        <div class="admin-tabs">
+            <div class="admin-tab active" data-tab="orders">Заказы</div>
+            <div class="admin-tab" data-tab="users">Пользователи</div>
+        </div>
+        
+        <!-- Вкладка заказов -->
+        <div class="tab-content active" id="orders-tab">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Поиск по номеру заказа, пользователю или статусу..." id="search-orders">
+                <button class="search-btn" onclick="searchOrders()">Найти</button>
+            </div>
+            
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>№ заказа</th>
+                        <th>Дата</th>
+                        <th>Пользователь</th>
+                        <th>Сумма</th>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                    <tr>
+                        <td>#12347</td>
+                        <td>25.07.2025</td>
+                        <td>Анна Петрова</td>
+                        <td>2,500 ₽</td>
+                        <td class="status-new">Новый</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewOrder(12347)">Просмотр</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#12346</td>
+                        <td>24.07.2025</td>
+                        <td>Сергей Иванов</td>
+                        <td>1,800 ₽</td>
+                        <td class="status-processing">В обработке</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewOrder(12346)">Просмотр</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#12345</td>
+                        <td>23.07.2025</td>
+                        <td>Иван Иванов</td>
+                        <td>1,900 ₽</td>
+                        <td class="status-completed">Выполнен</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewOrder(12345)">Просмотр</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#12344</td>
+                        <td>22.07.2025</td>
+                        <td>Мария Сидорова</td>
+                        <td>3,200 ₽</td>
+                        <td class="status-new">Новый</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewOrder(12344)">Просмотр</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Вкладка пользователей -->
+        <div class="tab-content" id="users-tab">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Поиск по имени, email или телефону..." id="search-users">
+                <button class="search-btn" onclick="searchUsers()">Найти</button>
+            </div>
+            
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Email</th>
+                        <th>Телефон</th>
+                        <th>Дата регистрации</th>
+                        <th>Заказов</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body">
+                    <tr>
+                        <td>1001</td>
+                        <td>Иван Иванов</td>
+                        <td>ivan@yandex.ru</td>
+                        <td>+7 (978) 123-45-67</td>
+                        <td>15.05.2025</td>
+                        <td>2</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewUser(1001)">Просмотр</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1002</td>
+                        <td>Анна Петрова</td>
+                        <td>anna@gmail.com</td>
+                        <td>+7 (978) 765-43-21</td>
+                        <td>20.06.2025</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewUser(1002)">Просмотр</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1003</td>
+                        <td>Сергей Иванов</td>
+                        <td>sergey@mail.ru</td>
+                        <td>+7 (978) 555-55-55</td>
+                        <td>10.07.2025</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewUser(1003)">Просмотр</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1004</td>
+                        <td>Мария Сидорова</td>
+                        <td>maria@example.com</td>
+                        <td>+7 (978) 999-99-99</td>
+                        <td>22.07.2025</td>
+                        <td>1</td>
+                        <td>
+                            <button class="btn btn-view" onclick="viewUser(1004)">Просмотр</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Модальное окно просмотра пользователя -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Профиль пользователя</h2>
+            
+            <div class="user-details">
+                <div class="user-info">
+                    <div class="user-info-item">
+                        <span class="user-info-label">ID:</span>
+                        <span id="user-id">1001</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Имя:</span>
+                        <span id="user-name">Иван Иванов</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Email:</span>
+                        <span id="user-email">ivan@yandex.ru</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Телефон:</span>
+                        <span id="user-phone">+7 (978) 123-45-67</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Адрес:</span>
+                        <span id="user-address">Республика Крым, г. Алушта, ул. Школьная, д. 19</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Дата регистрации:</span>
+                        <span id="user-reg-date">15.05.2025</span>
+                    </div>
+                </div>
+                
+                <div class="user-orders">
+                    <h3>История заказов</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>№ заказа</th>
+                                <th>Дата</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>15.05.2025</td>
+                                <td>1,900 ₽</td>
+                                <td class="status-completed">Выполнен</td>
+                            </tr>
+                            <tr>
+                                <td>#12344</td>
+                                <td>10.05.2025</td>
+                                <td>1,500 ₽</td>
+                                <td class="status-processing">В обработке</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно просмотра заказа -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Детали заказа #12347</h2>
+            
+            <div class="user-details">
+                <div class="user-info">
+                    <div class="user-info-item">
+                        <span class="user-info-label">Пользователь:</span>
+                        <span id="order-user">Анна Петрова</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Дата заказа:</span>
+                        <span id="order-date">25.07.2025</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Статус:</span>
+                        <span id="order-status" class="status-new">Новый</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Сумма:</span>
+                        <span id="order-total">2,500 ₽</span>
+                    </div>
+                    <div class="user-info-item">
+                        <span class="user-info-label">Адрес доставки:</span>
+                        <span id="order-address">г. Симферополь, ул. Киевская, д. 15, кв. 42</span>
+                    </div>
+                </div>
+                
+                <div class="user-orders">
+                    <h3>Состав заказа</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Товар</th>
+                                <th>Количество</th>
+                                <th>Цена</th>
+                                <th>Сумма</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Подарочный набор "Свадебный"</td>
+                                <td>1</td>
+                                <td>1,200 ₽</td>
+                                <td>1,200 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Классические пряники</td>
+                                <td>300г</td>
+                                <td>350 ₽/100г</td>
+                                <td>1,050 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Праздничные пряники</td>
+                                <td>50г</td>
+                                <td>500 ₽/100г</td>
+                                <td>250 ₽</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="admin.js"></script>
+</body>
+</html>

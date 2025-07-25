@@ -269,6 +269,160 @@ nav a:hover {
     font-size: 18px; /* Размер */
 }
 
+/* Стили для мультиселекта в профиле */
+.custom-multiselect {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.select-selected {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-items {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.select-option {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 40px;
+}
+
+.select-option:hover {
+    background-color: #fff4e0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #d4a017;
+    border-radius: 4px;
+}
+
+.select-option input:checked ~ .checkmark {
+    background-color: #d4a017;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.select-option input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.select-selected.active .arrow {
+    transform: rotate(180deg);
+}
+
+.select-items.show {
+    display: block;
+}
+
+.selected-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.selected-tag {
+    background-color: #d4a017;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.selected-tag img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.selected-tag .remove {
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Стили для группы элементов формы */
+.form-group {
+    margin-bottom: 25px; /* Отступ снизу */
+}
+
+/* Стили для метки в форме */
+.form-group label {
+    display: block; /* Блочный элемент */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 8px; /* Отступ снизу */
+    color: #5a3e1f; /* Цвет текста */
+}
+
+/* Стили для полей ввода, текстовой области и выпадающего списка */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%; /* Ширина на 100% */
+    padding: 12px; /* Внутренние отступы */
+    border: 1px solid #ddd; /* Граница */
+    border-radius: 5px; /* Скругленные углы */
+    font-family: inherit; /* Наследование шрифта */
+    font-size: 16px; /* Размер шрифта */
+}
+
+/* Стили для текстовой области */
+.form-group textarea {
+    height: 120px; /* Фиксированная высота */
+    resize: vertical; /* Возможность изменения размера только по вертикали */
+}
+
 /* Вкладки */
 .account-tabs {
     display: flex; /* Горизонтальное расположение */
@@ -378,56 +532,63 @@ nav a:hover {
     margin-bottom: 10px; /* Отступ */
 }
 
-/* Форма редактирования */
+/* Форма редактирования профиля */
 .edit-profile-form {
-    max-width: 600px; /* Ширина */
-    margin-top: 30px; /* Отступ */
+    max-width: 600px;
+    margin-top: 30px;
 }
 
-/* Строка формы */
+/* Строка формы (для Имя/Фамилия) */
 .form-row {
-    display: flex; /* Гибкое расположение */
-    gap: 20px; /* Расстояние */
-    margin-bottom: 20px; /* Отступ */
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px; /* Одинаковый отступ снизу */
 }
 
-/* Группа полей */
+/* Общие стили для всех групп полей */
 .form-group {
-    flex: 1; /* Равномерное распределение */
+    margin-bottom: 24px; /* Одинаковый отступ между всеми полями */
 }
 
-/* Метка поля */
+/* Метки полей */
 .form-group label {
-    display: block; /* Блочный элемент */
-    margin-bottom: 8px; /* Отступ */
-    color: #5a3e1f; /* Цвет */
-    font-weight: bold; /* Жирный */
+    display: block;
+    margin-bottom: 8px;
+    color: #5a3e1f;
+    font-weight: bold;
 }
 
-/* Поле ввода */
+/* Поля ввода */
 .form-group input, 
 .form-group select {
-    width: 100%; /* Ширина */
-    padding: 12px; /* Отступы */
-    border: 1px solid #ddd; /* Граница */
-    border-radius: 5px; /* Скругление */
-    font-size: 16px; /* Размер */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 /* Кнопка сохранения */
 .save-btn {
-    background-color: #d4a017; /* Фон */
-    color: white; /* Цвет */
-    border: none; /* Без рамки */
-    padding: 12px 30px; /* Отступы */
-    border-radius: 30px; /* Скругление */
-    font-size: 16px; /* Размер */
-    font-weight: bold; /* Жирный */
-    cursor: pointer; /* Курсор */
-    transition: background-color 0.3s; /* Анимация */
+    background-color: #d4a017;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 24px; /* Такой же отступ сверху, как между полями */
+    display: block;
+    width: 100%;
 }
 
-/* Кнопка при наведении */
 .save-btn:hover {
-    background-color: #b38614; /* Изменение цвета */
+    background-color: #b38614;
+}
+
+/* Специальный класс для одиночных полей (если нужно) */
+.single-field {
+    margin-bottom: 24px;
 }
