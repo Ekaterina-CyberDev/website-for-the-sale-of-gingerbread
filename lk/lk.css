@@ -1,0 +1,594 @@
+/* Общие стили для всей страницы */
+body {
+    font-family: 'Arial', sans-serif; /* Основной шрифт */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    color: #5a3e1f; /* Основной цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Стили шапки сайта */
+header {
+    background-color: #fff9f0; /* Цвет фона */
+    padding: 20px 0; /* Внутренние отступы */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень под шапкой */
+}
+
+/* Контейнер шапки */
+.header-container {
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    display: flex; /* Flex-контейнер */
+    justify-content: space-between; /* Распределение пространства */
+    align-items: center; /* Выравнивание по вертикали */
+    padding: 0 20px; /* Внутренние отступы */
+}
+
+/* Логотип */
+.logo {
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    color: #d4a017; /* Цвет текста */
+}
+
+/* Навигационное меню */
+nav ul {
+    display: flex; /* Горизонтальное меню */
+    list-style: none; /* Убираем маркеры списка */
+    gap: 30px; /* Расстояние между пунктами */
+}
+
+/* Ссылки в меню */
+nav a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #5a3e1f; /* Цвет ссылок */
+    font-weight: 500; /* Полужирный шрифт */
+    transition: color 0.3s; /* Плавное изменение цвета */
+}
+
+/* Ссылки при наведении */
+nav a:hover {
+    color: #d4a017; /* Цвет при наведении */
+}
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    z-index: 1000; /* Поверх других элементов */
+    left: 0; top: 0; /* Позиционирование */
+    width: 100%; height: 100%; /* На весь экран */
+    background-color: rgba(0,0,0,0.5); /* Полупрозрачный фон */
+}
+
+/* Контент модального окна */
+.modal-content {
+    background-color: #fff9f0; /* Цвет фона */
+    margin: 10% auto; /* Центрирование */
+    padding: 25px; /* Внутренние отступы */
+    border-radius: 10px; /* Скругленные углы */
+    max-width: 400px; /* Максимальная ширина */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Тень */
+    position: relative; /* Для позиционирования кнопки закрытия */
+    border: 1px solid #ffd8a8; /* Граница */
+    text-align: center; /* Центрирование текста */
+}
+
+/* Кнопка закрытия */
+.close {
+    color: #d4a76a; /* Цвет */
+    float: right; /* Выравнивание справа */
+    font-size: 28px; /* Размер */
+    font-weight: bold; /* Жирный шрифт */
+    cursor: pointer; /* Курсор-указатель */
+}
+
+/* Кнопка закрытия при наведении */
+.close:hover {
+    color: #b38b52; /* Изменение цвета */
+}
+
+/* Заголовок модального окна */
+.contact-modal-title {
+    font-size: 22px; /* Размер шрифта */
+    color: #b38b52; /* Цвет */
+    text-align: center; /* Центрирование */
+    margin-bottom: 20px; /* Отступ снизу */
+    font-weight: bold; /* Жирный шрифт */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+}
+
+/* Элемент контакта */
+.contact-modal-item {
+    margin-bottom: 20px; /* Отступ снизу */
+    text-align: center; /* Центрирование */
+}
+
+/* Метка контакта */
+.contact-label {
+    color: #8a6d3b; /* Цвет */
+    font-size: 16px; /* Размер */
+    margin-bottom: 5px; /* Отступ */
+}
+
+/* Значение контакта */
+.contact-value {
+    color: #5a4526; /* Цвет */
+    font-size: 18px; /* Размер */
+    font-weight: 500; /* Полужирный */
+}
+
+/* Иконки соцсетей */
+.social-icons {
+    display: flex; /* Горизонтальное расположение */
+    justify-content: center; /* Центрирование */
+    gap: 20px; /* Расстояние между иконками */
+    margin-top: 15px; /* Отступ сверху */
+}
+
+/* Отдельная иконка */
+.social-icon {
+    transition: transform 0.3s ease; /* Анимация */
+    display: inline-block; /* Строчно-блочный элемент */
+}
+
+/* Иконка при наведении */
+.social-icon:hover {
+    transform: scale(1.1); /* Увеличение */
+}
+
+/* Изображение иконки */
+.social-icon img {
+    width: 40px; height: 40px; /* Размеры */
+    object-fit: contain; /* Сохранение пропорций */
+}
+
+/* Сетка избранного */
+.favorites-grid {
+    display: grid; /* Grid-расположение */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Автоподбор колонок */
+    gap: 30px; /* Расстояние между карточками */
+    margin-top: 30px; /* Отступ сверху */
+}
+
+/* Карточка избранного */
+.favorite-item {
+    background: #fff9f0; /* Цвет фона */
+    border-radius: 10px; /* Скругленные углы */
+    overflow: hidden; /* Скрытие выходящего за границы */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Тень */
+}
+
+/* Изображение в карточке */
+.favorite-item-image {
+    height: 180px; /* Фиксированная высота */
+    overflow: hidden; /* Обрезка выходящего за границы */
+}
+
+/* Изображение внутри */
+.favorite-item-image img {
+    width: 100%; height: 100%; /* Заполнение */
+    object-fit: cover; /* Обрезка с сохранением пропорций */
+    transition: transform 0.5s; /* Анимация */
+}
+
+/* Информация о товаре */
+.favorite-item-info {
+    padding: 20px; /* Внутренние отступы */
+}
+
+/* Заголовок товара */
+.favorite-item-info h4 {
+    font-size: 20px; /* Размер */
+    color: #5a3e1f; /* Цвет */
+    margin: 0 0 10px 0; /* Отступы */
+}
+
+/* Описание товара */
+.favorite-item-info p {
+    color: #7a5c3a; /* Цвет */
+    margin-bottom: 15px; /* Отступ */
+    font-size: 15px; /* Размер */
+}
+
+/* Цена товара */
+.favorite-item-price {
+    font-size: 18px; /* Размер */
+    font-weight: bold; /* Жирный */
+    color: #d4a017; /* Цвет */
+    margin-bottom: 15px; /* Отступ */
+}
+
+/* Кнопка удаления */
+.remove-favorite {
+    display: inline-block; /* Строчно-блочный */
+    background-color: #d4a017; /* Цвет фона */
+    color: white; /* Цвет текста */
+    padding: 8px 20px; /* Отступы */
+    border-radius: 20px; /* Скругление */
+    text-decoration: none; /* Без подчеркивания */
+    font-weight: bold; /* Жирный */
+    font-size: 14px; /* Размер */
+    text-align: center; /* Центрирование */
+    transition: background-color 0.3s; /* Анимация */
+    border: none; /* Без границы */
+    cursor: pointer; /* Курсор */
+    width: 100%; /* Ширина */
+}
+
+/* Кнопка при наведении */
+.remove-favorite:hover {
+    background-color: #b38614; /* Изменение цвета */
+}
+
+/* Футер */
+.footer {
+    background-color: #5a3e1f; /* Цвет фона */
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрирование */
+    padding: 20px 0; /* Отступы */
+}
+
+/* Текст футера */
+.footer p {
+    margin: 0; /* Убираем отступы */
+}
+
+/* Контейнер ЛК */
+.account-container {
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    padding: 40px 20px; /* Отступы */
+}
+
+/* Шапка ЛК */
+.account-header {
+    display: flex; /* Гибкое расположение */
+    align-items: center; /* Выравнивание */
+    margin-bottom: 40px; /* Отступ */
+}
+
+/* Аватар */
+.account-avatar {
+    width: 120px; height: 120px; /* Размеры */
+    border-radius: 50%; /* Круг */
+    object-fit: cover; /* Обрезка фото */
+    border: 3px solid #d4a017; /* Рамка */
+    margin-right: 30px; /* Отступ */
+}
+
+/* Информация пользователя */
+.account-info h2 {
+    color: #5a3e1f; /* Цвет */
+    margin-bottom: 10px; /* Отступ */
+}
+
+/* Email */
+.account-email {
+    color: #7a5c3a; /* Цвет */
+    font-size: 18px; /* Размер */
+}
+
+/* Стили для мультиселекта в профиле */
+.custom-multiselect {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.select-selected {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-items {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.select-option {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 40px;
+}
+
+.select-option:hover {
+    background-color: #fff4e0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #d4a017;
+    border-radius: 4px;
+}
+
+.select-option input:checked ~ .checkmark {
+    background-color: #d4a017;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.select-option input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.select-selected.active .arrow {
+    transform: rotate(180deg);
+}
+
+.select-items.show {
+    display: block;
+}
+
+.selected-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.selected-tag {
+    background-color: #d4a017;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.selected-tag img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.selected-tag .remove {
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Стили для группы элементов формы */
+.form-group {
+    margin-bottom: 25px; /* Отступ снизу */
+}
+
+/* Стили для метки в форме */
+.form-group label {
+    display: block; /* Блочный элемент */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 8px; /* Отступ снизу */
+    color: #5a3e1f; /* Цвет текста */
+}
+
+/* Стили для полей ввода, текстовой области и выпадающего списка */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%; /* Ширина на 100% */
+    padding: 12px; /* Внутренние отступы */
+    border: 1px solid #ddd; /* Граница */
+    border-radius: 5px; /* Скругленные углы */
+    font-family: inherit; /* Наследование шрифта */
+    font-size: 16px; /* Размер шрифта */
+}
+
+/* Стили для текстовой области */
+.form-group textarea {
+    height: 120px; /* Фиксированная высота */
+    resize: vertical; /* Возможность изменения размера только по вертикали */
+}
+
+/* Вкладки */
+.account-tabs {
+    display: flex; /* Горизонтальное расположение */
+    border-bottom: 2px solid #ffd8a8; /* Линия снизу */
+    margin-bottom: 30px; /* Отступ */
+}
+
+/* Кнопка вкладки */
+.tab-btn {
+    padding: 12px 25px; /* Отступы */
+    background: none; /* Прозрачный фон */
+    border: none; /* Без рамки */
+    font-size: 18px; /* Размер */
+    color: #5a3e1f; /* Цвет */
+    cursor: pointer; /* Курсор */
+    position: relative; /* Для псевдоэлемента */
+}
+
+/* Активная вкладка */
+.tab-btn.active {
+    color: #d4a017; /* Цвет */
+    font-weight: bold; /* Жирный */
+}
+
+/* Подчеркивание активной вкладки */
+.tab-btn.active:after {
+    content: ''; /* Псевдоэлемент */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: -2px; left: 0; /* Позиция */
+    width: 100%; height: 2px; /* Размеры */
+    background: #d4a017; /* Цвет */
+}
+
+/* Контент вкладки */
+.tab-content {
+    display: none; /* Скрыт по умолчанию */
+}
+
+/* Активный контент */
+.tab-content.active {
+    display: block; /* Показываем */
+}
+
+/* Список заказов */
+.order-list {
+    display: grid; /* Grid-расположение */
+    gap: 20px; /* Расстояние */
+}
+
+/* Карточка заказа */
+.order-card {
+    background: #fff9f0; /* Фон */
+    border-radius: 10px; /* Скругление */
+    padding: 20px; /* Отступы */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Тень */
+}
+
+/* Шапка заказа */
+.order-header {
+    display: flex; /* Гибкое расположение */
+    justify-content: space-between; /* Распределение */
+    margin-bottom: 15px; /* Отступ */
+    padding-bottom: 10px; /* Отступ */
+    border-bottom: 1px solid #eee; /* Линия */
+}
+
+/* Номер заказа */
+.order-number {
+    font-weight: bold; /* Жирный */
+    color: #5a3e1f; /* Цвет */
+}
+
+/* Дата заказа */
+.order-date {
+    color: #7a5c3a; /* Цвет */
+}
+
+/* Статус заказа */
+.order-status {
+    padding: 5px 10px; /* Отступы */
+    border-radius: 20px; /* Скругление */
+    font-size: 14px; /* Размер */
+    font-weight: bold; /* Жирный */
+}
+
+/* Статус "Выполнен" */
+.status-completed {
+    background-color: #e8f5e9; /* Фон */
+    color: #2e7d32; /* Цвет */
+}
+
+/* Статус "В обработке" */
+.status-processing {
+    background-color: #fff3e0; /* Фон */
+    color: #e65100; /* Цвет */
+}
+
+/* Товары в заказе */
+.order-products {
+    margin-top: 15px; /* Отступ */
+}
+
+/* Элемент товара */
+.product-item {
+    display: flex; /* Гибкое расположение */
+    justify-content: space-between; /* Распределение */
+    margin-bottom: 10px; /* Отступ */
+}
+
+/* Форма редактирования профиля */
+.edit-profile-form {
+    max-width: 600px;
+    margin-top: 30px;
+}
+
+/* Строка формы (для Имя/Фамилия) */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px; /* Одинаковый отступ снизу */
+}
+
+/* Общие стили для всех групп полей */
+.form-group {
+    margin-bottom: 24px; /* Одинаковый отступ между всеми полями */
+}
+
+/* Метки полей */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5a3e1f;
+    font-weight: bold;
+}
+
+/* Поля ввода */
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Кнопка сохранения */
+.save-btn {
+    background-color: #d4a017;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 24px; /* Такой же отступ сверху, как между полями */
+    display: block;
+    width: 100%;
+}
+
+.save-btn:hover {
+    background-color: #b38614;
+}
+
+/* Специальный класс для одиночных полей (если нужно) */
+.single-field {
+    margin-bottom: 24px;
+}
