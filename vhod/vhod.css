@@ -214,6 +214,8 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative; /* ← Важно для псевдоэлемента */
+    overflow: hidden; /* ← Обрезает лишнее */
 }
 
 .login-btn:hover {
@@ -247,4 +249,25 @@ body {
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
 }
